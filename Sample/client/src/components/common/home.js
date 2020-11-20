@@ -41,7 +41,7 @@ function Home(props) {
                     <div className="home">
                         <div className="row">
                             <div className="item-home col-6">
-                            <Card1 title={"Quize"}  hashtag={["cs", "coding"]} btnTxt="Give Test"  />
+                            <Card1 title={"Quizz"}  hashtag={["cs", "coding"]} btnTxt="Give Test"  />
                             </div>
                             <div className="item-home col-6">
                             <Card2 title={"Who's the real 🐍"}  hashtag={["club", "webD"]} btnTxt="Discuss"  />
