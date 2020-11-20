@@ -1,0 +1,71 @@
+/* ----------- loading ----------- */
+.loading {
+    text-justify: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+    padding-top: 10%;
+}
+
+/* ----------- home ----------- */
+.bg-home {
+    width: 100%;
+    max-height: max-content;
+    padding-bottom: 5%;
+    background-image: url('../../images/ls3.jpg');
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    align-content: center;
+}
+.img{
+    opacity: 0.4;
+}
+.home {
+    margin-top: 5%;
+    margin-right: 10%;
+    margin-left: 10%;
+    max-width: 80%;
+    /* background-color: rgba(76, 175, 80, 0.5); */
+    background-color: rgba(72, 81, 60, 0.5);
+    border-radius: 20px;
+}
+.row {
+    position: relative;
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-items: center;
+    align-items: center;
+
+}
+.col-6 {
+    position: relative;
+    display: flexbox;
+    align-items: center;
+    max-width: 40%;
+    justify-self: center;
+    margin: auto;
+    text-align: center;
+    align-self: center;
+    
+}
+.item-home {
+    position: relative;
+    padding: 4%;
+    align-self: center;
+    align-content: center;
+}
+.lb {
+    width: 50%;
+    margin-top: 2%;
+    margin-left: 25%;
+    padding: auto;
+}
+.lb-title {
+    background-color: black;
+    color: greenyellow;
+}
