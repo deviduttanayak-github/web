@@ -42,7 +42,7 @@ var init = "";
 
 function Profile() {
     const classes = useStyles();
-    // const [usr, setusr] = useState(null);
+    const [err, seterr] = useState(false);
     const [ready, setready] = useState(false);
 
     useEffect(() => {
@@ -54,6 +54,7 @@ function Profile() {
             })
             .catch( e =>{
                 console.log(e);
+                seterr(true);
             })
     }, [])
 
@@ -61,6 +62,8 @@ function Profile() {
     return (
         <div>
             { !ready && (<Load />)}
+            { err && (<div><h3>error occured</h3>probably your are not authorized/network-failure/some-bug<br />
+            Try to refresh the pag or Login again  </div>)}
             { ready && ( <div>
             <Navb />
             <div className={classes.root}>

@@ -6,10 +6,10 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/quize/:q', function(req, res, next) {
   var test_id = req.params.q;
-  console.log("test ", test_id);
+  // console.log("test ", test_id);
   test_model.findOne( {"tname" : test_id})
     .then( test => {
-      console.log(test);
+      // console.log(test);
       var q_arr = test.tquestinsID;
       var res_q = [];
       model.find({})
@@ -32,7 +32,7 @@ router.get('/quize/:q', function(req, res, next) {
 
 router.post('/submit-answers', (req,res,next)=>{
   var user_res = req.body;
-  console.log(user_res);
+  // console.log(user_res);
   model.find({} , (err, questions )=>{
       if(err) {
           console.log(err);
@@ -42,17 +42,14 @@ router.post('/submit-answers', (req,res,next)=>{
       if(questions){
           var score = 0;
           user_res.forEach( ele => {
-              console.log(ele);
+              // console.log(ele);
               questions.forEach( qu => {
-                  console.log(ele.qid," ", qu.qid);
-                  console.log(ele.ans," ", qu.qanswer[0]);
-                  // console,log(ele.qid === qu.qid," && ",ele.ans===qu.qanswer[0] )
                   if(ele.qid == qu.qid && ele.ans==qu.qanswer[0]) score++;
               });
           });
           test_model.updateOne({"tname": "t1"}, { $push : { "tcandidates" : { "username" : req.session.username, "score" : score, "time" : 2 } } } )
             .then( test => {
-              console.log(test);
+              // console.log(test);
               res.send("Your Score is "+score);
             })
             .catch( e => {

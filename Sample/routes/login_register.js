@@ -7,11 +7,11 @@ var router = express.Router();
 
 // Route => /api/auth/signup
 router.post('/signup', (req, res, next) => {
-  console.log("signup"); console.log(req.body);
+  // console.log("signup"); console.log(req.body);
   var newUser = model(req.body);
   newUser.save()
     .then( usr => {
-      console.log(usr);
+      // console.log(usr);
       res.send('received');
     })
     .catch( err => {
@@ -27,10 +27,10 @@ router.post('/signup', (req, res, next) => {
 
 // Route => api/auth/login
 router.post('/login', (req, res, next) => {
-  console.log(req.body); console.log(req.session);
+  // console.log(req.body); console.log(req.session);
   model.findOne({'email' : req.body.email, 'password' : req.body.password})
     .then( usr => {
-      console.log(usr);
+      // console.log(usr);
       if(usr === null){
         res.statusCode = 200;
         res.send('Account not found');
@@ -53,7 +53,7 @@ router.post('/login', (req, res, next) => {
 });
 
 router.get('/status', (req, res, next) => {
-    console.log("status"); console.log(req.session);
+    // console.log("status"); console.log(req.session);
     if(req.session.key===conf["session-key"]){
         res.send(req.session.username);
     }
@@ -64,7 +64,7 @@ router.get('/status', (req, res, next) => {
 });
 
 router.get('/logout', (req, res, next) => {
-    console.log("logout"); console.log(req.session);
+    // console.log("logout"); console.log(req.session);
     req.session.destroy();
     res.end();
 });

@@ -6,10 +6,10 @@ var conf = require('../conf');
 */
 
 const sessionAuth = (req, res, next) => {
-    console.log("sessionauth : ", req.session);
+    // console.log("sessionauth : ", req.session);
     if(req.session.key){
         if(req.session.key===conf["session-key"]){
-            console.log("has :", req.session.username);
+            // console.log("has :", req.session.username);
             next();
         }
         else {
@@ -17,7 +17,7 @@ const sessionAuth = (req, res, next) => {
         }
     }
     else {
-        console.log("no session found");
+        // console.log("no session found");
         res.redirect('/login');
     }
 

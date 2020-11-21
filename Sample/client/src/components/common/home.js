@@ -18,6 +18,7 @@ var table_rows = [];
 
 function Home(props) {
     const [ready, setready] = useState(false);
+    const [err, seterr] = useState(false);
     const [user, setuser] = useState(props.username);
     
     useEffect(() => {
@@ -29,12 +30,15 @@ function Home(props) {
             })
             .catch( e => {
                 console.log("error");
+                seterr(true);
             })
     }, [])
 
     return (
         <div>
             { !ready && (<Load />) }
+            { err && (<div><h3>error occured</h3>probably your are not authorized/network-failure/some-bug<br />
+            Try to refresh the pag or Login again  </div>)}
             { ready && (
                 <div className="bg-home">
                     <Navbar username={user} />

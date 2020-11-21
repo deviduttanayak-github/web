@@ -13,7 +13,7 @@ const init = async (next) =>{
                 next();
             })
             .catch( err => {
-                console.log('error');
+                // console.log('error');
                 localStorage.setItem('username', "");
                 next();
             })

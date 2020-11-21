@@ -10,6 +10,7 @@ var quests = [];
 
 function Test_page() {
 
+    const [err, seterr] = useState(false);
     const [isReady, setisReady] = useState(false);
     const [submitted, setsubmitted] = useState(false);
     const [msg, setmsg] = useState("")
@@ -26,19 +27,20 @@ function Test_page() {
     const init =() => {
         axios.get(baseUrl+'/zapps/quize/t1')
         .then( res => {
-            console.log(res);
+            // console.log(res);
             quests = res.data;
-            console.log(quests);
+            // console.log(quests);
             setisReady(true);
         })
         .catch(err => {
-            console.log(err);
+            // console.log(err);
+            seterr(true);
         })
     }
 
 
     const send_res =(e) => {
-        console.log("submit");
+        // console.log("submit");
         var res2 = [];
         
         for( var key in response ){
@@ -48,7 +50,7 @@ function Test_page() {
 
         axios.post(baseUrl+'/zapps/submit-answers', res2)
             .then( res =>{
-                console.log(res);
+                // console.log(res);
                 setmsg(res.data);
                 setsubmitted(true);
             })
@@ -56,7 +58,7 @@ function Test_page() {
                 console.log(err);
             })
 
-        console.log(res2);
+        // console.log(res2);
         e.preventDefault();
     }
 
@@ -66,6 +68,8 @@ function Test_page() {
             {
                 !isReady && (<Load />)
             }
+            { err && (<div><h3>error occured</h3>probably your are not authorized/network-failure/some-bug<br />
+            Try to refresh the pag or Login again  </div>)}
             {
                 isReady && (
                     <div>

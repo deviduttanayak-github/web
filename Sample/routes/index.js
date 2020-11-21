@@ -2,7 +2,9 @@ var express = require('express');
 var auth = require('./auth');
 var model = require('../models/test');
 var user = require('../models/user');
+var posts = require('../models/discuss');
 var zapps = require('./zapps');
+const { route } = require('./zapps');
 var router = express.Router();
 
 /*------------------------- GET home page. ----------------------- */ 
@@ -14,7 +16,7 @@ router.get('/', auth , (req, res, next)=> {
 router.get('/lb/:q', (req, res, next)=>{
   model.findOne({"tname" : req.params.q })
     .then( table => {
-      console.log(table);
+      // console.log(table);
       res.send(table.tcandidates);
     })
     .catch(e =>{
@@ -42,6 +44,48 @@ router.get('/profile', auth, (req, res, next)=>{
     }
 });
 
+router.get('/posts', (req, res, next)=>{
+  // console.log("posts-req")
+  posts.find({})
+    .then( ps => {
+      res.send(ps);
+    })
+    .catch(e=>{
+      res.statusCode = 500;
+      res.end();
+    })
+});
+
+router.post('/reply', (req,res,next)=>{
+  posts.update({"topic_id":req.body.id}, { $push : { "replies" : req.body.data } })
+    .then( ps =>{
+      res.send("reply-added. refresh to see changes");
+    })
+    .catch(e=>{
+      res.send("something went wrong");
+    })
+});
+
+router.post('/add-post', auth, (req, res, next)=>{
+  var uname = req.session.username;
+  if(uname){
+    var newpost = posts(req.body)
+    newpost.save()
+      .then( p =>{
+        res.send("successfully added. Refresh to see.")
+      })
+      .catch( e=>{
+        res.statusCode = 500;
+        res.end();
+      })
+  }
+  else{
+    res.statusCode = 403;
+    res.end();
+  }
+} );
+
+// --------------- routes ro z-apps ---------------
 router.use('/zapps', auth,  zapps);
 
 module.exports = router;

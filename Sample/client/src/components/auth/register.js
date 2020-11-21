@@ -269,6 +269,8 @@ export default function SignUp() {
               <Link href="#/login" variant="body2">
                 Already have an account? Sign in
               </Link>
+              <br />
+              <i>NOTE: password is not encrypted, so kindly don't use your universal/other_account password</i>
             </Grid>
           </Grid>
         </form>
