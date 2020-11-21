@@ -23,7 +23,7 @@ function Topic(props) {
                 setresp(res.data);
             })
             .catch( er =>{
-                console.log(res);
+                console.log(er);
             })
     };
 
