@@ -13,6 +13,18 @@ router.get('/', auth , (req, res, next)=> {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/all-users', (req, res, next)=>{
+  user.find({}, {'username' : 1, '_id' : 0})
+    .then( u =>{
+      console.log(u);
+      res.send(u);
+    })
+    .catch( e =>{
+      console.log(e)
+      res.send('unable to fetch');
+    })
+});
+
 router.get('/lb/:q', (req, res, next)=>{
   model.findOne({"tname" : req.params.q })
     .then( table => {
@@ -84,6 +96,7 @@ router.post('/add-post', auth, (req, res, next)=>{
     res.end();
   }
 } );
+
 
 // --------------- routes ro z-apps ---------------
 router.use('/zapps', auth,  zapps);

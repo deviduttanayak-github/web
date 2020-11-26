@@ -5,6 +5,7 @@ import Load from '../common/loading';
 import Navb from '../common/navbar';
 import Avatar from './avatar';
 import {baseUrl} from '../../conf';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -39,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
 const data = { "email" : "devi_D@gmail.com", "Name" : "Devidutta Nayak"};
 var prof = {};
 var init = "";
+var users = []
 
 function Profile() {
     const classes = useStyles();
@@ -50,7 +52,14 @@ function Profile() {
             .then( res=>{
                 prof = Object.assign({}, res.data);
                 init = res.data.username.toUpperCase()[0]; 
-                setready(true);
+                axios.get(baseUrl+'/all-users')
+                    .then( res2 => {
+                        // console.log(res2);
+                        res2.data.forEach(u => {
+                            users.push(" "+ u.username +", ");
+                        });
+                        setready(true);
+                    })
             })
             .catch( e =>{
                 console.log(e);
@@ -80,7 +89,18 @@ function Profile() {
                         </div>)
                     })
                 }
-            </div>  
+            </div> 
+            <div>
+                <h3>chat-app details</h3>
+                <li>both the friends must be connect to server at the same time</li>
+                <li>when your status is 'connected' your message will reach to server</li>
+                <li>if status is 'not connected' try refresh/go back and then got o chat</li>
+                <b>users list:</b>
+                <i>
+                    {users}
+                </i><br />
+                <Link to='/chat'>start conversation</Link>
+            </div> 
             </div>
             )}
         </div>

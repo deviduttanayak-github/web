@@ -20,6 +20,7 @@ import {Link, useHistory} from 'react-router-dom';
 import status from '../../status';
 import axios from 'axios';
 import { baseUrl } from '../../conf';
+import {MobileView, BrowserView} from 'react-device-detect';
 
 const useStyles = makeStyles((theme) =>
   createStyles({

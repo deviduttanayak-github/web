@@ -8,6 +8,7 @@ import Notfound from '../components/common/notfound';
 import Quize from '../components/contests/quize';
 import Profile from '../components/user/profile'; 
 import Discuss from '../components/discuss/discuss';
+import Chat from '../components/user/chat';
 import Load from '../components/common/loading';
 
 function Routes() { 
@@ -32,6 +33,7 @@ function Routes() {
                         <Route exact path='/profile' component={Profile} />
                         <Route exact path='/zapps/quize' component={Quize} />
                         <Route exact path='/discuss' component={Discuss} />
+                        <Route exact path='/chat' component={Chat} />
                         <Route component={Notfound} />
                     </Switch> 
                     )}

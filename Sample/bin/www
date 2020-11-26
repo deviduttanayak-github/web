@@ -3,10 +3,11 @@
 /**
  * Module dependencies.
  */
-
+var WebSocket = require('websocket').server;
 var app = require('../app');
 var debug = require('debug')('sample:server');
 var http = require('http');
+const { json } = require('express');
 
 /**
  * Get port from environment and store in Express.
@@ -88,3 +89,57 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+/************************** chat-app **************************/
+console.log('chat-app')
+var WS = new WebSocket({'httpServer': server,'path': '/chat'});
+
+var CLIENTS = {};
+var CLIENTS_ARR = [];
+
+WS.on('request', (req)=>{
+  console.log('request-came');
+  var conn = req.accept(null, req.origin);
+
+  conn.on('message', (msg)=> {
+      console.log("[received] : ", msg);
+      var obj = JSON.parse(msg.utf8Data);
+      console.log("obj: ", obj);
+      if(obj.status === 1){
+        CLIENTS[obj.id] = conn;
+        CLIENTS_ARR.push(conn);
+        console.log('added- ', obj.id);
+      }
+      else sendMessageToClient(obj);
+    })
+    conn.on('close', msg => {
+        // console.log(conn.closeDescription)
+        console.log("bye-bye ", msg);
+    })
+});
+
+const sendMessageToClient = (obj)=>{
+  console.log("clients connected: ", CLIENTS_ARR.length, " obj: ", obj);
+  var from = obj.from; var to = obj.to; var msg = obj.msg; 
+  // if(CLIENTS[from]==null) console.log(from," id null");
+  // else console.log('from status: ', CLIENTS[from].connected);
+
+  // if(CLIENTS[to]==null) console.log(to," id null");
+  // else console.log('to status: ', CLIENTS[to].connected);
+
+  if(CLIENTS[to] == null && CLIENTS[from] !== null ){
+    CLIENTS[from].send("[SERVER]: Your friend isn\'t connected");
+  } 
+  else{
+    if(CLIENTS[to].connected) CLIENTS[to].send(msg);
+    else if(CLIENTS[from] !== null) CLIENTS[from].send("[SERVER]: your friend is offline")
+  }
+  // console.log("client-usr: ", CLIENTS[usr].connected);
+  // CLIENTS[usr].send("replying u back");
+  // setTimeout(() => {
+  //   sendMessageToClient(obj);
+  // }, 1000);
+};
+
+
+/************************** chat-app **************************/

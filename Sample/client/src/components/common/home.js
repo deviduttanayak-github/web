@@ -7,6 +7,9 @@ import Card1 from './cards/card1';
 import './style.css';
 import Table from './table';
 import conf, { baseUrl } from '../../conf';
+import status from '../../status';
+import {MobileView} from 'react-device-detect';
+import {Link, useHistory} from 'react-router-dom';
 
 const col = {'a':"username", 'b':'score', 'c': "time taken" };
 const rows = [ { 'name':'devi_D', 'score': "88", "time": '10 min'  } ,
@@ -42,6 +45,7 @@ function Home(props) {
             { ready && (
                 <div className="bg-home">
                     <Navbar username={user} />
+                    <i >for mobile users: <Link className="link" to='/login'>click to login</Link> if u r not </i> 
                     <div className="home">
                         <div className="row">
                             <div className="item-home col-6">

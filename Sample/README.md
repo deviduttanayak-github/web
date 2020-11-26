@@ -1,6 +1,6 @@
 # lemon-soda
 ## present state
-- features like login/signup/logout, give a quiz, leaderboard , profile, comment/discuss section.
+- features like login/signup/logout, give a quiz, leaderboard , profile, comment/discuss section, and real-time chat-app.
 - session based authentication used 
 - mongodb atlas database
 

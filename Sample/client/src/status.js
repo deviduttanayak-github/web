@@ -4,7 +4,7 @@ import { baseUrl } from './conf';
 
 const init = async (next) =>{
     console.log("initializing", localStorage.getItem('username'));
-    if(localStorage.getItem('username')==="" || localStorage.getItem('username')===null ){
+    if(localStorage.getItem('username')==="" || localStorage.getItem('username')===null || localStorage.getItem('username')!=="" ){
         axios.get(baseUrl+"/auth/status")
             .then( res => {
                 if(res.status===200) 

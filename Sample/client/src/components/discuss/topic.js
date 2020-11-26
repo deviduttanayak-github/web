@@ -15,16 +15,19 @@ function Topic(props) {
     };
     
     const sendReply =(e) => {
-        var id = e.target.id; var usr = (status.getUser()=="")?"unknown":status.getUser();
-        console.log( id, " ", { "username": usr, "reply":reply } );
-        axios.post(baseUrl+'/reply', { "id": id, "data": { "username": usr, "reply":reply }  })
-            .then( res =>{
-                console.log(res.data);
-                setresp(res.data);
-            })
-            .catch( er =>{
-                console.log(er);
-            })
+        if(reply==="" || reply.trim() === "" ) alert("first write something");
+        else {
+            var id = e.target.id; var usr = (status.getUser()=="")?"unknown":status.getUser();
+            console.log( id, " ", { "username": usr, "reply":reply } );
+            axios.post(baseUrl+'/reply', { "id": id, "data": { "username": usr, "reply":reply }  })
+                .then( res =>{
+                    console.log(res.data);
+                    setresp(res.data);
+                })
+                .catch( er =>{
+                    console.log(er);
+                })
+        }
     };
 
     return (

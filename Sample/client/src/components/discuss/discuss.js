@@ -36,7 +36,7 @@ function Discuss() {
     const addTopic = (e) => {setnewtopic(true)};
     
     const postTopic = (e) => {
-        if(sub=="") alert("Empty topic not allowed");
+        if(sub==="" || sub.trim()==="") alert("Empty topic not allowed");
         else if(status.getUser()===""){
             setmsg("you cannot add a topic unless u r signed-in!!");
         }
