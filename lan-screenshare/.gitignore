@@ -1,0 +1,11 @@
+# dev folders/files
+/client
+/ssq
+/server/filereader.js
+/server/tcp.js
+/tcp_test.py
+/.vscode
+
+# dependencies
+/server/node_modules
+

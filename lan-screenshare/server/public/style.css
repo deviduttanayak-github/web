@@ -1,0 +1,95 @@
+:root{
+    --aws-green : #6EF472 ;
+    --aws-red : #F37029 ;
+    --aws-blue : #29A6F3 ;
+    --gfont : 'Potta One';
+}
+body{
+    background: linear-gradient(var(--aws-blue), var(--aws-green) ) ;
+    min-height: 100vh;
+    margin: 10px auto;
+    max-width: 100%;
+}
+
+#token-box{
+    display: flex;
+    margin: 10px auto;
+    width: fit-content;
+    max-width: 80%;
+    justify-content: center;
+}
+
+#token-box input{
+    margin: 2px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    min-width: 100px;
+}
+
+#token-box button{
+    border-radius: 5px;
+    font-family: var(--gfont);   
+    font-weight: 400; 
+}
+
+#status-box{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+#status-box .dot{
+    background-color: red;
+    width: 10px;
+    height:  10px;
+    border-radius: 50%;
+    margin: 8px;
+}
+
+#img-box{
+    width: 95%;
+    border: solid 5px wheat;
+    display: flex;
+    margin: auto;
+    max-height: 700px;
+    justify-content: center;
+}
+@media only screen and (max-width: 700px) {
+    #img-box {
+        width: 100%;
+    }
+    .view{
+        width: 100%;
+        height: auto;
+    }
+}
+.view{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+footer{
+    left: 0px;
+    bottom: 0px;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.367);
+    min-height: 50px;
+    width: 100%;
+}
+
+#home{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+#home button{
+    max-width: 200px;
+    margin: auto;
+}
+
+#screen-viewer{
+    display: none;
+}
