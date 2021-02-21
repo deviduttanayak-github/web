@@ -10,23 +10,23 @@
     <link rel="stylesheet" href="style.css" >
 </head>
 <body>
-    <br>
-    under construction
+    <button style="margin: 0px 5px ;" id="back-btn">back</button>
     <div id="home">
         <h1>being-noob</h1>
         <h3>Welcome</h3>
         <button id="boom">go to screen viewer</button>
+        <button id="boom-text">go to text exchange</button>
     </div>
 
     <div id="screen-viewer">
-        <div id="token-box">
+        <div class="token-box">
             <input id="token" placeholder="Type the token code" >
             <button onclick="" >Connect</button>
         </div>
-        <div id="status-box">
+        <div class="status-box">
             <div id="status-dot" class="dot"></div>
             <div>
-                <b>status : </b> <span id="status">connected</span>
+                <b>status : </b> <span id="status">connecting...</span>
             </div>
         </div>
     
@@ -36,11 +36,42 @@
         </div>    
     </div>
 
+    <div id="text-share"> 
+        <div class="token-box">
+            <input class="inp-txt" id="token-text-share" placeholder="Generate a token code" >
+            <button id="share-txt" onclick="" >Share</button>
+            <input class="inp-txt" id="token-text" placeholder="Type the token code" >
+            <button id="join-txt" onclick="" >Connect</button>
+            <div class="mode">mode : <span id="incoming"> None</span></div>
 
+        </div>
+        <div class="status-box">
+            <div id="status-dot-txt" class="dot"></div>
+            <div>
+                <b>status : </b> <span id="status-txt">connecting...</span>
+            </div>
+        </div>
+        <div id="text-box">
+            <div id="text-controller">
+                <div class="text-choice" style="--req:3">
+                    size : <input id="txt-size">
+                </div>
+                <div class="text-choice" style="--req: 5">
+                    color : <input id="txt-color">
+                </div>
+                <button id="text-setter" onclick="">set</button>
+            </div>
+            
+            <div id="text-box-left" class="content-box-display" contenteditable="true" onkeydown="onKeyDown(event)" >
+                Start typing here!!
+            </div>
+        </div>
+    </div>
+
+    <footer id="foot">
+        <i>built with love by </i> <b>Devidutta Nayak</b> 
+    </footer>
 </body>
-<footer id="foot">
-    <i>made by : </i> <b>Devidutta Nayak</b> 
-</footer>
 <!-- socket io cdn -->
 <script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
 <!-- main js -->
