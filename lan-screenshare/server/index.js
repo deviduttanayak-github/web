@@ -26,9 +26,15 @@ var last_visit = 0;
 // --------- internal-img-data-transport ---------
 var stream_itr = 1; var str_data = "", sdata = "";
 var client = new net.Socket();
-client.connect(9898, '127.0.0.1', function() {
-	console.log('CONNECTED : img-data-channel');
+
+
+client.connect(9898, '127.0.0.1', function(err) {
+    console.log('CONNECTED : img-data-channel');
 });
+client.on("error", (e)=> {
+    console.log("[ERR] : Connection Failed - img-data-channel");
+});
+
 var header_length = 10; // header_length
 client.on('data', function(data) {
     str_data = String.fromCharCode.apply(null, data);

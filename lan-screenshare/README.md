@@ -1,4 +1,4 @@
-# Screen Sharing Web Application over a LAN (v1.0)
+# Screen/Text Sharing Web Application over a LAN (v1.0)
 
 ---
 
