@@ -9,7 +9,7 @@
             ],
             "answer": "True",
             "Explanation": "Java is a high-level language because it is more easily understood by humans, Low=-level languages are always static."
-        },
+        }
     },
     {
         "id" : 2,
@@ -37,7 +37,7 @@
             ],
             "answer": "4",
             "Explanation": "% finds the remainder of an expression, the remainder of 24/5 being 4"
-        },
+        }
     },
     {
         "id" : 4,
@@ -51,7 +51,7 @@
             ],
             "answer": "0",
             "Explanation": "When an integer is called and not defined, the default value is 0"
-        },
+        }
     },
     {
         "id" : 5,
@@ -65,7 +65,7 @@
             ],
             "answer": "Not Assigned",
             "Explanation": "When an object is not defined, the default value is Not Assigned"
-        },
+        }
     },
     {
         "id" : 6,
@@ -77,7 +77,7 @@
             ],
             "answer": "Yes",
             "Explanation": "It is possible to have multiple classes in the same java file."
-        },
+        }
     },
     {   
         "id" : 7,
@@ -91,7 +91,7 @@
             ],
             "answer": "One class inheriting from multiple super classes",
             "Explanation": "Multiple inheritance in java allows for one class to inherit from multiple super classes."
-        },
+        }
     },
     {
         "id" : 8,
@@ -105,7 +105,7 @@
             ],
             "answer": "Abstraction",
             "Explanation": "Abstraction is the process that involves recognizing and focusing on the important characteristics of a situation or object."
-        },
+        }
     },
     {
         "id" : 9,
@@ -117,7 +117,7 @@
             ],
             "answer": "No",
             "Explanation": "Arrays are static length."
-        },
+        }
     },
     {
         "id" : 10,
@@ -129,6 +129,6 @@
             ],
             "answer": "Yes",
             "Explanation": "Arraylists are not static in length."
-        },
+        }
     }
 ]
