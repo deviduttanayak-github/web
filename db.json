@@ -1,7 +1,11 @@
-[
+{
+  "posts": [
     {
-        "id" : "q1" ,
-        "txt" : "test"
+      "id": 1,
+      "title": "hello"
     }
-]
-   
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
