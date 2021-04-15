@@ -114,12 +114,125 @@
             ],
         "answer": "Yes",
         "Explanation": "Arraylists are not static in length."
-    }
+    },
+    
+    {
+            "id" : 11,
+            "question": "What is a package a collection of?",
+            "options": [
+            "Classes",
+            "Methods",
+            "Classes and Interfaces",
+            "None of the above"
+            ],
+            "answer": "Classes and Interfaces",
+            "Explanation": "Packages are collections of classes and interfaces."
+    },
+    {       "id" : 12,
+            "question": "Which of the following are keywords?",
+            "options": [
+            "abstract",
+            "switch",
+            "throw",
+            "void",
+            "All of the above"
+            ],
+            "answer": "All of the above",
+            "Explanation": "All of the options are keywords, the list of all of them can be found here: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html"
+        },
+    {       "id" : 13,
+            "question": "Which of the following are Java IDEs?",
+            "options": [
+            "Netbeans",
+            "Eclipse",
+            "IntelliJ IDEA",
+            "All of the above"
+            ],
+            "answer": "All of the above",
+            "Explanation": "All of the above are Java IDEs."
+        },
+    {       "id" : 14,
+            "question": "What of the following are methods to create a GUI in java?",
+            "options": [
+            "Swing",
+            "JavaFX",
+            "Java IO",
+            "First and Second Options"
+            ],
+            "answer": "First and Second Options",
+            "Explanation": "Java Swing and JavaFX can be used to create a GUI in java"
+        },
+    {       "id" : 15,
+            "question": "What is the output of the following code? \nint count;\nfor (int i=0; i==20; i++)\ncount++;\nSystem.out.println(count);",
+            "options": [
+            "5",
+            "20",
+            "Count",
+            "None of the Above"
+            ],
+            "answer": "20",
+            "Explanation": "The for loop counts up and adds adds one to count until it hits 20."
+        },
+    {       "id" : 16,
+            "question": "What is the output of the following code? \nArrayList<String> fruits = new ArrayList<String>();\nfruits.add(\"Apple\");\nfruits.add(\"Pear\");\nfruits.add(\"Grape\");\nSystem.out.println(fruits.get(1));",
+            "options": [
+            "Apple",
+            "Pear",
+            "Grape",
+            "None of the above"
+            ],
+            "answer": "Pear",
+            "Explanation": "The 1st element of the array is pear since the 0th element is whatever is added first."
+        },
+    {       "id" : 17,
+            "question": "What is the quantity of the following arraylist?\nArrayList list = new ArrayList();",
+            "options": [
+            "0",
+            "10",
+            "100",
+            "Null"
+            ],
+            "answer": "10",
+            "Explanation": "The default quantity of an ArrayList is 10."
+        },
+    {       "id" : 18,
+            "question": "What is the output of the following code? int num[] = {1,2,3,4,5};\nfor(int i=0;i< x; ++i)\nSystem.out.println(values[i]);  ",
+            "options": [
+            "5",
+            "1",
+            "0",
+            "None of the above"
+            ],
+            "answer": "None of the above",
+            "Explanation": "The variable x is not initalized, so the code will not execute and will result in an error. "
+        },
+    {       "id" : 19,
+            "question": "What is the output of the following code?\nSystem.out.println(50/0)",
+            "options": [
+            "Infinity",
+            "Zero",
+            "java.lang.ArithmeticException",
+            "None of the above"
+            ],
+            "answer": "java.lang.ArithmeticException",
+            "Explanation": "Dividing an integer by 0 results in java.lang.ArithmeticException"
+        },
+    {       "id" : 20,
+            "question": "What is the output of the following code?\nSystem.out.print(\"Hello\");\nSystem.out.println(\"World!\"",
+            "options": [
+            "Hello\nWorld!",
+            "Hello World!",
+            "HelloWorld!",
+            "Hello\n World!"
+            ],
+            "answer": "HelloWorld!",
+            "Explanation": "System.out.print() does not print a new line after printing."
+        }
     
   ],
   
   "quiz": {
-    "total_questions": 10,
+    "total_questions": 20,
     "time": 30
   }
 }
