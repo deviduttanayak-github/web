@@ -1,11 +1,45 @@
 {
-  "posts": [
+  "questions": [
     {
-      "id": 1,
-      "title": "hello"
+        "id" : "q1" , 
+        "question": "Java is a high-level language.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "answer": "True",
+        "Explanation": "Java is a high-level language because it is more easily understood by humans, Low=-level languages are always static."
+    },
+    {
+        "id" : 2,
+        "question": "What kind of language is java?",
+        "options": [
+            "Functional Language",
+            "Procedural Language",
+            "Object-Oriented Language",
+            "Structured Language"
+        ],
+        "answer": "Object-Oriented Language",
+        "Explanation": "Java is an Object-Oriented Language."
+        
+    },
+    {
+        "id" : 3,
+        "question": "What is the result of 24 % 5? ",
+        "options": [
+            "4",
+            "5",
+            "4.8",
+            "24"
+        ],
+        "answer": "4",
+        "Explanation": "% finds the remainder of an expression, the remainder of 24/5 being 4"
+        
     }
   ],
-  "profile": {
-    "name": "typicode"
+  
+  "quiz": {
+    "total_questions": 20,
+    "time": 30
   }
 }
