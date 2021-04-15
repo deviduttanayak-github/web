@@ -1,13 +1,7 @@
 [
     {
-        "id" : "q1" , 
-        "question": "Java is a high-level language.",
-        "options": [
-            "True",
-            "False"
-        ],
-        "answer": "True",
-        "Explanation": "Java is a high-level language because it is more easily understood by humans, Low=-level languages are always static."
+        "id" : "q1" ,
+        "txt" : "test"
     }
 ]
    
