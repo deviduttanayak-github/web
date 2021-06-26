@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algos | Graph Coloring</title>
+    <link rel="icon" href="/images/logo1.png" type="image/icon type">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Potta One">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" >
+</head>
+<body class="bg-dark text-success">
+    <div style="display: flex; flex-direction: column; justify-content: center; margin: 10px auto; align-items: center;">
+        <h1>Graph Coloring</h1>
+        <div class="box-h">
+            <div id="tes" class="cell-h"></div>
+            <div id="tes1" class="cell-h"></div>
+            <div id="tes2" class="cell-h"></div>
+            <div id="tes3" class="cell-h"></div>
+            <div id="tes4" class="cell-h"></div>
+            <div id="tes5" class="cell-h"></div>
+        </div>
+    </div>
+    
+    <div class="grid">
+        <b style="letter-spacing : 2px; color: coral;">hello tester</b>
+        <div class="box-v">
+            <input id="num_of_cells" class="ui-inp-text mar-10" type="text" placeholder="dimension (max-20)"> 
+            <div class="box-h">
+                <button id="num_of_cells_btn" class="ui-btn mar-10" type="submit" >SET</button>
+                <button id="color" class="ui-btn mar-10">COLOR</button>
+                <button class="ui-btn mar10" onclick="dia()">HOW?</button>
+                <dialog id="how" style="width: 50%; background-color: rgba(59, 57, 57, 0.993); color: white; z-index: 5;">
+                    <ul>
+                        <li>enter the dimension of a square matrix and click SET</li>
+                        <li>click on an empty cell, then a number will display.</li>
+                        <li>then keep moving the cursor to make a cluster of cells and mark it as same region</li>
+                        <li>cells having same number are marked as a region</li>
+                        <li>to stop marking cell with same number 1) click again or move cusrsor 2) outside the matrix or 3) over to a previosly marked cell </li>
+
+                        <li>click COLOR to fill with distinct colors</li>
+                    </ul>
+                    <button class="mar10" style="width: 100px; background-color: rgb(235, 57, 57);" onclick="dia()">close</button>
+                </dialog>
+            </div>
+        </div>
+        
+        <div id="root"></div>
+        
+        <div class="box-v" style="border-top: solid 2px black; margin-top: 30px;">
+            <h3>facts</h3>
+            <div class="low" data-o="">
+                Planer graph takes at max 4 colors to color.
+            </div>
+            <div class="low">
+                Here it follows a greedy approach.
+            </div>
+
+
+        </div>
+    </div>
+    
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+</html>
